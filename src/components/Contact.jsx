@@ -3,24 +3,25 @@ import { Container, Typography, Box, Grid, Paper, IconButton } from '@mui/materi
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { Link } from 'react-scroll';
+import { HiArrowNarrowUp } from 'react-icons/hi';
 
 const Contact = () => {
   return (
     <Box 
       id="contact" 
       sx={{ 
-        minHeight: '100vh',
-        backgroundColor: 'white',
+        minHeight: '80vh',
         display: 'flex',
         alignItems: 'center',
+        bgcolor: 'background.default',
+        py: 8,
       }}
     >
       <Container 
-        maxWidth="md" 
+        maxWidth="lg" 
         sx={{ 
-          py: 8,
-          mx: 'auto',
-          width: '80%'
+          my: 8
         }}
       >
         <Typography variant="h4" component="h2" gutterBottom align="center" color="primary" sx={{ mb: 6 }}>
@@ -156,6 +157,44 @@ const Contact = () => {
             </Paper>
           </Grid>
         </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
+          <Link
+            to='biography'
+            smooth
+            duration={500}
+            style={{
+              textDecoration: 'none'
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                px: 3,
+                py: 1.5,
+                my: 1,
+                borderRadius: 1,
+                cursor: 'pointer',
+                color: 'white',
+                background: 'linear-gradient(to right, #06b6d4, #3b82f6)',
+                '&:hover .arrow-icon': {
+                  transform: 'translateY(-5px)',
+                  transition: 'transform 0.3s'
+                }
+              }}
+            >
+              <Typography>Back to Top</Typography>
+              <HiArrowNarrowUp 
+                size={25} 
+                className="arrow-icon" 
+                style={{ 
+                  marginLeft: '12px',
+                  transition: 'transform 0.3s'
+                }} 
+              />
+            </Box>
+          </Link>
+        </Box>
       </Container>
     </Box>
   );

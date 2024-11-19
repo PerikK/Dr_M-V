@@ -13,6 +13,9 @@ import {
   Paper
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import React from 'react';
+import { Link } from 'react-scroll';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 
 const articles = [
   {
@@ -163,6 +166,44 @@ const Articles = () => {
             </Typography>
           </Paper>
         </Modal>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
+          <Link
+            to='contact'
+            smooth
+            duration={500}
+            style={{
+              textDecoration: 'none'
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                px: 3,
+                py: 1.5,
+                my: 1,
+                borderRadius: 1,
+                cursor: 'pointer',
+                color: 'white',
+                background: 'linear-gradient(to right, #06b6d4, #3b82f6)',
+                '&:hover .arrow-icon': {
+                  transform: 'rotate(90deg)',
+                  transition: 'transform 0.3s'
+                }
+              }}
+            >
+              <Typography>Contact</Typography>
+              <HiArrowNarrowRight 
+                size={25} 
+                className="arrow-icon" 
+                style={{ 
+                  marginLeft: '12px',
+                  transition: 'transform 0.3s'
+                }} 
+              />
+            </Box>
+          </Link>
+        </Box>
       </Container>
     </Box>
   );

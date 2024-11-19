@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Typography, Box, Grid, Paper } from '@mui/material';
+import { Link } from 'react-scroll';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 
 const officeImages = [
   {
@@ -30,54 +32,45 @@ const Office = () => {
       id="office" 
       sx={{ 
         minHeight: '100vh',
-        backgroundColor: 'white',
         display: 'flex',
         alignItems: 'center',
+        bgcolor: 'background.default',
       }}
     >
       <Container 
         maxWidth="lg" 
         sx={{ 
           py: 8,
-          mx: 'auto',
-          width: '80%'
+          mb: 4
         }}
       >
-        <Typography variant="h4" component="h2" gutterBottom align="center" color="primary" sx={{ mb: 6 }}>
-          Our Medical Facility
+        <Typography variant="h3" component="h2" align="center" gutterBottom color="text.primary">
+          Our Office
         </Typography>
-        <Typography variant="subtitle1" align="center" color="text.secondary" paragraph sx={{ mb: 6 }}>
-          Take a virtual tour of our state-of-the-art medical facility
-        </Typography>
-        <Grid container spacing={4} sx={{ mt: 2 }}>
+        <Grid container spacing={4}>
           {officeImages.map((image, index) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <Paper
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Paper 
                 elevation={3}
                 sx={{
                   p: 2,
                   height: '100%',
                   display: 'flex',
-                  flexDirection: 'column',
-                  transition: 'transform 0.2s',
-                  '&:hover': {
-                    transform: 'scale(1.02)'
-                  }
+                  flexDirection: 'column'
                 }}
               >
-                <Box
-                  sx={{
-                    height: 250,
+                <img
+                  src={image.url}
+                  alt={image.title}
+                  style={{
                     width: '100%',
-                    backgroundColor: '#f0f0f0',
-                    backgroundImage: `url(${image.url})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    mb: 2,
-                    borderRadius: 1
+                    height: '200px',
+                    objectFit: 'cover',
+                    marginBottom: '1rem',
+                    borderRadius: '4px'
                   }}
                 />
-                <Typography variant="h6" gutterBottom align="center">
+                <Typography variant="h6" gutterBottom color="text.primary" align="center">
                   {image.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" align="center">
@@ -87,6 +80,44 @@ const Office = () => {
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
+          <Link
+            to='articles'
+            smooth
+            duration={500}
+            style={{
+              textDecoration: 'none'
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                px: 3,
+                py: 1.5,
+                my: 1,
+                borderRadius: 1,
+                cursor: 'pointer',
+                color: 'white',
+                background: 'linear-gradient(to right, #06b6d4, #3b82f6)',
+                '&:hover .arrow-icon': {
+                  transform: 'rotate(90deg)',
+                  transition: 'transform 0.3s'
+                }
+              }}
+            >
+              <Typography>Articles</Typography>
+              <HiArrowNarrowRight 
+                size={25} 
+                className="arrow-icon" 
+                style={{ 
+                  marginLeft: '12px',
+                  transition: 'transform 0.3s'
+                }} 
+              />
+            </Box>
+          </Link>
+        </Box>
       </Container>
     </Box>
   );

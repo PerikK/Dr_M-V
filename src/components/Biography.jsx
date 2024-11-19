@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Typography, Box, Paper, Avatar } from '@mui/material';
+import { Link } from 'react-scroll';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 
 const Biography = () => {
   return (
@@ -67,6 +69,44 @@ const Biography = () => {
                 numerous awards for her contributions to community health initiatives.
               </Typography>
             </Box>
+          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
+            <Link
+              to='office'
+              smooth
+              duration={500}
+              style={{
+                textDecoration: 'none'
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  px: 3,
+                  py: 1.5,
+                  my: 1,
+                  borderRadius: 1,
+                  cursor: 'pointer',
+                  color: 'white',
+                  background: 'linear-gradient(to right, #06b6d4, #3b82f6)',
+                  '&:hover .arrow-icon': {
+                    transform: 'rotate(90deg)',
+                    transition: 'transform 0.3s'
+                  }
+                }}
+              >
+                <Typography>Office</Typography>
+                <HiArrowNarrowRight 
+                  size={25} 
+                  className="arrow-icon" 
+                  style={{ 
+                    marginLeft: '12px',
+                    transition: 'transform 0.3s'
+                  }} 
+                />
+              </Box>
+            </Link>
           </Box>
         </Paper>
       </Container>
