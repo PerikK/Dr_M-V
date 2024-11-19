@@ -58,7 +58,7 @@ const Contact = () => {
                 }}
                 size="large"
                 component="a"
-                href="mailto:dr.smith@example.com"
+                href="mailto:mariavagia1@yahoo.gr"
               >
                 <EmailIcon sx={{ fontSize: 40 }} />
               </IconButton>
@@ -66,7 +66,7 @@ const Contact = () => {
                 Email
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                dr.smith@example.com
+                mariavagia1@yahoo.gr
               </Typography>
             </Paper>
           </Grid>
