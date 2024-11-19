@@ -41,12 +41,12 @@ const Biography = () => {
                 height: 250,
                 boxShadow: 3
               }}
-              alt="Dr. Smith"
+              alt="Dr. Maria Vagia"
               src="/doctor-placeholder.jpg"
             />
             <Box maxWidth="600px">
               <Typography variant="h3" component="h1" gutterBottom color="text.primary" align="center">
-                Dr. Sarah Smith
+                Dr. Maria Vagia
               </Typography>
               <Typography variant="h6" gutterBottom color="text.secondary" align="center">
                 Board Certified Family Physician
