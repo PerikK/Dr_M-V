@@ -12,7 +12,7 @@ const Navbar = () => {
             component="div"
             sx={{ color: '#2c3e50', fontWeight: 'bold' }}
           >
-            Dr. Smith
+            Dr. Maria Vagia
           </Typography>
           <div>
             <Button
